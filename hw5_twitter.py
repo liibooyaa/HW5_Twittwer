@@ -173,6 +173,7 @@ def find_most_common_cooccurring_hashtag(tweet_data, hashtag_to_ignore):
     '''
     dic={}
     tweets=tweet_data['statuses']
+    hashtag_to_ignore=hashtag_to_ignore[1:]
     for t in tweets:
         hashtags=t["entities"]["hashtags"]
         for i in range(len(hashtags)):
@@ -214,7 +215,7 @@ if __name__ == "__main__":
     tweet_data = make_request_with_cache(baseurl, hashtag, count)
     most_common_cooccurring_hashtag = find_most_common_cooccurring_hashtag(tweet_data, hashtag)
     print("The most commonly cooccurring hashtag with {} is {}.".format(hashtag, most_common_cooccurring_hashtag))
-
+    
     
 
 
